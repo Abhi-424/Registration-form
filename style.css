@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+ 
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.container h2 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background: #fff;
+  transform: scale(1.02);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* Buttons container */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+#Register,
+#Login {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Register Button */
+#Register {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+#Register:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(67, 206, 162, 0.7);
+}
+
+/* Login Button */
+#Login {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+}
+#Login:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 106, 0, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 25px 20px;
+  }
+
+  .container h2 {
+    font-size: 22px;
+  }
+
+  input,
+  #Register,
+  #Login {
+    font-size: 14px;
+  }
+}
