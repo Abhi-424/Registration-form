@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
- 
+
 body {
   height: 100vh;
   background: linear-gradient(135deg, #667eea, #764ba2);
@@ -62,7 +62,8 @@ input:focus {
 
 /* Buttons */
 #Register,
-#Login {
+#Login,
+#ForgotPassword {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -91,6 +92,13 @@ input:focus {
   box-shadow: 0 0 10px rgba(255, 106, 0, 0.7);
 }
 
+#ForgotPassword {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+#ForgotPassword:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(247, 151, 30, 0.7);
+}
 /* Responsive */
 @media (max-width: 480px) {
   .container {
