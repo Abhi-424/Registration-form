@@ -7,16 +7,12 @@ const forgotPasswordButton = document.getElementById("ForgotPassword");
 forgotPasswordButton.style.display = "none";
 
 registerButton.addEventListener("click", function () {
-  const username = user.value;
-  const password = pass.value;
-
-  if (username === "" || password === "") {
+  if (user.value === "" || pass.value === "") {
     alert("Please fill in both fields before registering.");
     return;
   }
-
-  localStorage.setItem("username", username);
-  localStorage.setItem("password", password);
+  localStorage.setItem("username", user.value);
+  localStorage.setItem("password", pass.value);
   alert("Registration successful!");
 });
 
@@ -28,21 +24,26 @@ loginButton.addEventListener("click", function () {
     alert("Please enter your username and password.");
     return;
   }
-
+``
   if (user.value === storedUsername && pass.value === storedPassword) {
     alert("Login successful!");
-    forgotPasswordButton.style.display = "none"; // hide again if correct
+    forgotPasswordButton.style.display = "none";
   } else {
     alert("Invalid username or password.");
-    forgotPasswordButton.style.display = "inline-block"; // show forgot password
+    forgotPasswordButton.style.display = "inline-block";
   }
 });
 
 forgotPasswordButton.addEventListener("click", function () {
-  const storedUsername = localStorage.getItem("username");
-  if (storedUsername) {
-    alert("Password reset link sent to your email (demo).");
-  } else {
-    alert("Please register first.");
-  }
+  localStorage.removeItem("username");
+  localStorage.removeItem("password");
+  user.value = "";
+  pass.value = "";
+  user.placeholder = "Enter new username";
+  pass.placeholder = "Enter new password";
+  alert(
+    "Please enter a new username and password to register again."
+  );
+
+  forgotPasswordButton.style.display = "none";
 });
